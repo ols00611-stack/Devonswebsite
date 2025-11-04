@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover - Devon's Journey to Duluth</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .discover-hero {
+            background: linear-gradient(135deg, #ea580c 0%, #fb923c 50%, #fed7aa 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .discover-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+            opacity: 0.1;
+        }
+        
+        .discover-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .discover-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .discover-hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .discover-content {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        
+        .discover-section {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .discover-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ea580c, #f97316, #fb923c);
+        }
+        
+        .discover-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .discover-section h2 {
+            color: #ea580c;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .discover-section p {
+            color: #374151;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .discover-section p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section-icon {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #ea580c, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-left: 4px solid #ea580c;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(234, 88, 12, 0.1);
+        }
+        
+        .highlight-box p {
+            margin: 0;
+            font-weight: 500;
+            color: #92400e;
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .image-card {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .image-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .image-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .image-card .caption {
+            padding: 1rem;
+            background: white;
+            font-size: 0.9rem;
+            color: #6b7280;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-radius: 16px;
+            border: 1px solid #bae6fd;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ea580c;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #374151;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .discover-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .discover-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .discover-section {
+                padding: 2rem;
+                margin-bottom: 2rem;
+            }
+            
+            .discover-section h2 {
+                font-size: 2rem;
+            }
+            
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Devon's website</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="resume.html" class="nav-link">Resume</a>
+                </li>
+                <li class="nav-item">
+                    <a href="hobbies.html" class="nav-link">Hobbies</a>
+                </li>
+                <li class="nav-item">
+                    <a href="game.html" class="nav-link">Game</a>
+                </li>
+                <li class="nav-item">
+                    <a href="discover.html" class="nav-link">Discover</a>
+                </li>
+                <li class="nav-item">
+                    <a href="career.html" class="nav-link">Career Interests</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="discover-hero">
+        <div class="container">
+            <div class="discover-hero-content">
+                <h1>Discover My Journey</h1>
+                <p>From scholarships to northern lights - explore my connection to Duluth and the experiences that have shaped me here.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discover Content -->
+    <section class="discover-content">
+        <div class="container">
+            <!-- Why I chose Duluth -->
+            <div class="discover-section">
+                <h2>
+                    <span class="section-icon">🎓</span>
+                    Why I chose Duluth
+                </h2>
+                <p>I love the area and have always wanted to live up here. The schooling became free for me due to scholarships, which made the decision even easier. Duluth has always held a special place in my heart, and getting the opportunity to study here while pursuing my dreams was something I couldn't pass up.</p>
+                
+                <div class="highlight-box">
+                    <p>💡 <strong>Fun Fact:</strong> Thanks to scholarships, I was able to pursue my education in a place I've always dreamed of calling home!</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Scholarship Coverage</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Love for Duluth</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What I like about Duluth -->
+            <div class="discover-section">
+                <h2>
+                    <span class="section-icon">🏔️</span>
+                    What I like about Duluth and the surrounding area
+                </h2>
+                <p>I like the coldness and harsh environment that we live in. There's something invigorating about facing the elements and thriving in challenging conditions. I also love all the open, wooded area that surrounds us. The natural beauty here is incredible - from the vast forests to the pristine lakes, there's always something breathtaking to discover in the wilderness around Duluth.</p>
+                
+                <div class="image-grid">
+                    <div class="image-card">
+                        <img src="3497615.jpg" alt="Exploring the natural beauty around Duluth">
+                        <div class="caption">Exploring the natural beauty around Duluth</div>
+                    </div>
+                    <div class="image-card">
+                        <img src="IMG_20250925_153635620_HDR.jpg" alt="Working on projects in the Duluth area">
+                        <div class="caption">Working on projects in the Duluth area</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <p>❄️ <strong>Why I love the cold:</strong> There's something invigorating about facing the elements and thriving in challenging conditions that makes you feel truly alive!</p>
+                </div>
+            </div>
+
+            <!-- Personal experiences -->
+            <div class="discover-section">
+                <h2>
+                    <span class="section-icon">🌟</span>
+                    Personal experiences
+                </h2>
+                <p>Campus life here has given me some unforgettable memories. One time, some of my friends tried to ride a deer on campus - it was one of those spontaneous, crazy college moments that you never forget. The deer wasn't having it, but we all had a good laugh about it afterward.</p>
+                
+                <div class="highlight-box">
+                    <p>🦌 <strong>Campus Adventure:</strong> Sometimes the best memories come from the most unexpected moments - like when friends try to ride a deer!</p>
+                </div>
+                
+                <p>Some of my favorite times have been staying up late to watch the northern lights. There's nothing quite like lying on the grass with friends, wrapped in blankets, watching the sky dance with colors. The most memorable time was when me and a friend went for a late night drive and happened to see them. We pulled over and stayed out late watching them from the hood of the car, just talking and taking in the incredible natural light show above us. Those are the moments that make living up here so special.</p>
+                
+                <div class="highlight-box">
+                    <p>🌌 <strong>Northern Lights Magic:</strong> That late night drive turned into an unforgettable experience watching the aurora borealis from the hood of the car - pure magic under the Duluth sky!</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Northern Lights Shows</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Unforgettable Deer Encounter</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Memories Made</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Devon's website</h3>
+                    <p>Showcasing professional growth and dedication to excellence.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="hobbies.html">Hobbies</a></li>
+                        <li><a href="game.html">Game</a></li>
+                        <li><a href="discover.html">Discover</a></li>
+                        <li><a href="career.html">Career Interests</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 My Website. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Interests - Devon's Professional Goals</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .career-hero {
+            background: linear-gradient(135deg, #ea580c 0%, #fb923c 50%, #fed7aa 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .career-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+            opacity: 0.1;
+        }
+        
+        .career-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .career-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .career-hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .career-content {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        
+        .career-section {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .career-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ea580c, #f97316, #fb923c);
+        }
+        
+        .career-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .career-section h2 {
+            color: #ea580c;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .career-section p {
+            color: #374151;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .career-section p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section-icon {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #ea580c, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-left: 4px solid #ea580c;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(234, 88, 12, 0.1);
+        }
+        
+        .contact-info h3 {
+            color: #ea580c;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-details {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-item .icon {
+            font-size: 1.5rem;
+            color: #ea580c;
+            min-width: 30px;
+        }
+        
+        .contact-item .info {
+            flex: 1;
+        }
+        
+        .contact-item .label {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.25rem;
+        }
+        
+        .contact-item .value {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+        
+        .company-description {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-left: 4px solid #ea580c;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(234, 88, 12, 0.1);
+        }
+        
+        .company-description p {
+            margin: 0;
+            font-weight: 500;
+            color: #92400e;
+        }
+        
+        @media (max-width: 768px) {
+            .career-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .career-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .career-section {
+                padding: 2rem;
+                margin-bottom: 2rem;
+            }
+            
+            .career-section h2 {
+                font-size: 2rem;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Devon's website</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="resume.html" class="nav-link">Resume</a>
+                </li>
+                <li class="nav-item">
+                    <a href="hobbies.html" class="nav-link">Hobbies</a>
+                </li>
+                <li class="nav-item">
+                    <a href="game.html" class="nav-link">Game</a>
+                </li>
+                <li class="nav-item">
+                    <a href="discover.html" class="nav-link">Discover</a>
+                </li>
+                <li class="nav-item">
+                    <a href="career.html" class="nav-link">Career Interests</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="career-hero">
+        <div class="container">
+            <div class="career-hero-content">
+                <h1>Career Interests</h1>
+                <p>Exploring opportunities in financial services and professional development in the Duluth area.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Content -->
+    <section class="career-content">
+        <div class="container">
+            <!-- Edward Jones Section -->
+            <div class="career-section">
+                <h2>
+                    <span class="section-icon">💼</span>
+                    Edward Jones
+                </h2>
+                <p>Edward Jones is a financial services firm that provides investment and financial planning services to individual investors. They are known for their personalized approach to financial planning and their commitment to helping clients achieve their long-term financial goals.</p>
+                
+                <div class="company-description">
+                    <p>🏢 <strong>About Edward Jones:</strong> A leading financial services firm focused on individual investors, offering comprehensive financial planning and investment services with a personal touch.</p>
+                </div>
+                
+                <h3 style="color: #ea580c; font-size: 1.5rem; margin: 2rem 0 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 1.5rem;">🎯</span>
+                    Why I Want to Work at Edward Jones
+                </h3>
+                
+                <p>I would like to work at Edward Jones because I want to be a financial advisor who is able to help people retire on time or early. I am good with financial investments and would like to be able to help others while I get paid. My skills align with what they need because they are in need of financial advisors and that is my major and something I've been doing since I was 14.</p>
+                
+                <div class="company-description">
+                    <p>💡 <strong>My Passion:</strong> Helping people achieve their retirement goals through smart financial planning and investment strategies - something I've been passionate about since age 14!</p>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>
+                        <span class="icon">📍</span>
+                        Edward Jones - Duluth Office
+                    </h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="icon">👤</span>
+                            <div class="info">
+                                <div class="label">Financial Advisor</div>
+                                <div class="value">Rebecca M Hudoba</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">📍</span>
+                            <div class="info">
+                                <div class="label">Address</div>
+                                <div class="value">1324 E 4th St Ste C, Duluth, MN 55805</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">📞</span>
+                            <div class="info">
+                                <div class="label">Phone</div>
+                                <div class="value">(218) 337-0273</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Northwestern Mutual Section -->
+            <div class="career-section">
+                <h2>
+                    <span class="section-icon">🏦</span>
+                    Northwestern Mutual
+                </h2>
+                <p>Northwestern Mutual is a financial services company that provides life insurance, disability income insurance, long-term care insurance, annuities, and investment products. They are known for their strong financial stability and comprehensive approach to financial planning.</p>
+                
+                <div class="company-description">
+                    <p>🏦 <strong>About Northwestern Mutual:</strong> A leading financial services company specializing in life insurance, disability insurance, and comprehensive financial planning solutions.</p>
+                </div>
+                
+                <h3 style="color: #ea580c; font-size: 1.5rem; margin: 2rem 0 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 1.5rem;">🎯</span>
+                    Why I Want to Work at Northwestern Mutual
+                </h3>
+                
+                <p>I would like to work at Northwestern Mutual for many of the same reasons that I would like to work at Edward Jones. I have the same qualifications for them as well - helping people achieve their financial goals and retirement dreams through comprehensive financial planning and investment strategies.</p>
+                
+                <div class="company-description">
+                    <p>💡 <strong>My Alignment:</strong> Northwestern Mutual's focus on comprehensive financial planning aligns perfectly with my passion for helping people secure their financial future and achieve their retirement goals!</p>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>
+                        <span class="icon">📍</span>
+                        Northwestern Mutual - Contact Information
+                    </h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="icon">📞</span>
+                            <div class="info">
+                                <div class="label">Phone</div>
+                                <div class="value">(866) 950-4644</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Devon's website</h3>
+                    <p>Showcasing professional growth and dedication to excellence.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="hobbies.html">Hobbies</a></li>
+                        <li><a href="game.html">Game</a></li>
+                        <li><a href="discover.html">Discover</a></li>
+                        <li><a href="career.html">Career Interests</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 My Website. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
