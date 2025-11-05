@@ -181,6 +181,47 @@
             font-weight: 500;
         }
         
+        /* Desktop/Laptop optimizations */
+        @media (min-width: 1024px) {
+            .discover-hero {
+                padding: 140px 0 100px;
+            }
+
+            .discover-hero h1 {
+                font-size: 4rem;
+            }
+
+            .discover-content {
+                padding: 100px 0;
+            }
+
+            .discover-section {
+                padding: 4rem;
+            }
+
+            .discover-section h2 {
+                font-size: 2.75rem;
+            }
+
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1440px) {
+            .discover-hero h1 {
+                font-size: 4.5rem;
+            }
+
+            .discover-section {
+                padding: 5rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .discover-hero h1 {
                 font-size: 2.5rem;
